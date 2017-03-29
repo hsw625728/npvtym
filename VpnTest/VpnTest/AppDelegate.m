@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "MLBUserHomeViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,28 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    _gStatue = VPN_DISCONNECTED;
+    
+    _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    [_window makeKeyAndVisible];
+    _window.backgroundColor = [UIColor whiteColor];
+    
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+    [[DDTTYLogger sharedInstance] setColorsEnabled:YES];
+    
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : MLBNavigationBarTitleTextColor}];
+    [[UINavigationBar appearance] setTintColor:MLBLightGrayTextColor];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
+    
+    NSString *version = [MLBUtilities appCurrentVersion];
+    NSString *build = [MLBUtilities appCurrentBuild];
+    NSString *versionAndBuild = [NSString stringWithFormat:@"%@_%@", version, build];
+    //if (![[UserDefaults objectForKey:MLBLastShowIntroduceVersionAndBuild] isEqualToString:versionAndBuild]) {
+    //    _window.rootViewController = [[MLBIntroduceViewController alloc] init];
+    //} else {
+        _window.rootViewController = [[MLBUserHomeViewController alloc] init];
+    //}
+    
     return YES;
 }
 

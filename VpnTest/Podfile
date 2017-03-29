@@ -1,0 +1,27 @@
+inhibit_all_warnings!
+
+platform :ios, '8.0'
+target 'VpnTest’ do
+	pod 'AFNetworking'
+	pod 'SDWebImage'
+	pod 'Masonry'
+	pod 'Mantle'
+	pod 'MBProgressHUD'
+	pod 'UITableView+FDTemplateLayoutCell'
+	pod 'SDCycleScrollView'
+	pod 'TPKeyboardAvoiding'
+	pod 'MJRefresh'
+	pod 'KMNavigationBarTransition'
+	pod 'CocoaLumberjack'
+	pod 'SwipeView'
+	pod 'YLGIFImage'
+	pod 'GMCPagingScrollView'
+	pod 'YYText'
+	pod 'YYImage'
+	pod 'pop'
+	pod 'JTSImageViewController'
+	pod 'NYTPhotoViewer'
+	pod 'VGParallaxHeader'
+	pod 'ZYCornerRadius', '~> 0.8.1'
+	pod 'DZNEmptyDataSet'
+end

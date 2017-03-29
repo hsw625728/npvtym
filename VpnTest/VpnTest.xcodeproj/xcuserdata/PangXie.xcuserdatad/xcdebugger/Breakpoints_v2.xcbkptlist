@@ -166,7 +166,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VpnTest/MoVPNManage.m"
@@ -179,14 +179,14 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "-[MoVPNManage saveConfigCompleteHandle:]"
                   moduleName = "VpnTest"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/PangXie/mengyoutu/Games/%E7%AC%AC%E5%85%AD%E6%89%B9VPN/IOS-VPNTest-master/VpnTest/VpnTest/MoVPNManage.m"
-                  timestampString = "512382381.035917"
+                  urlString = "file:///Users/PangXie/mengyoutu/npvtym/VpnTest/VpnTest/MoVPNManage.m"
+                  timestampString = "512468470.421885"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "145"
@@ -194,14 +194,14 @@
                   offsetFromSymbolStart = "236">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "__40-[MoVPNManage saveConfigCompleteHandle:]_block_invoke"
                   moduleName = "VpnTest"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/PangXie/mengyoutu/Games/%E7%AC%AC%E5%85%AD%E6%89%B9VPN/IOS-VPNTest-master/VpnTest/VpnTest/MoVPNManage.m"
-                  timestampString = "512382381.037627"
+                  urlString = "file:///Users/PangXie/mengyoutu/npvtym/VpnTest/VpnTest/MoVPNManage.m"
+                  timestampString = "512468470.424241"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "146"
@@ -329,8 +329,8 @@
                   symbolName = "__40-[MoVPNManage saveConfigCompleteHandle:]_block_invoke"
                   moduleName = "VpnTest"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/PangXie/mengyoutu/Games/%E7%AC%AC%E5%85%AD%E6%89%B9VPN/IOS-VPNTest-master/VpnTest/VpnTest/MoVPNManage.m"
-                  timestampString = "512382381.046554"
+                  urlString = "file:///Users/PangXie/mengyoutu/npvtym/VpnTest/VpnTest/MoVPNManage.m"
+                  timestampString = "512468470.484526"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "166"
@@ -344,8 +344,8 @@
                   symbolName = "__40-[MoVPNManage saveConfigCompleteHandle:]_block_invoke_2"
                   moduleName = "VpnTest"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/PangXie/mengyoutu/Games/%E7%AC%AC%E5%85%AD%E6%89%B9VPN/IOS-VPNTest-master/VpnTest/VpnTest/MoVPNManage.m"
-                  timestampString = "512382381.048136"
+                  urlString = "file:///Users/PangXie/mengyoutu/npvtym/VpnTest/VpnTest/MoVPNManage.m"
+                  timestampString = "512468470.487531"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "167"
