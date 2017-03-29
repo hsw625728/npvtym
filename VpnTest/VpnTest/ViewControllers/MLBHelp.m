@@ -6,18 +6,18 @@
 //  Copyright © 2016 meilbn. All rights reserved.
 //
 
-#import "MLBSettingsViewController.h"
+#import "MLBHelp.h"
 #import "MLBSettingsSectionHeaderView.h"
 #import "MLBSettingsCell.h"
 
-@interface MLBSettingsViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface MLBHelpViewController () <UITableViewDataSource, UITableViewDelegate>
 
 
 @property (strong, nonatomic) UITableView *tableView;
 
 @end
 
-@implementation MLBSettingsViewController {
+@implementation MLBHelpViewController {
     NSArray *dataSource;
     NSString *version;
 }
@@ -34,7 +34,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"评价我们";
+    self.title = @"帮助说明";
     //[self addNavigationBarRightMusicItem];
     
     UIButton *plantButton = [MLBUIFactory buttonWithImageName:@"close_highlighted" highlightImageName:@"close_normal" target:self action:@selector(DoneClick)];
@@ -51,7 +51,7 @@
 #pragma mark - Private Method
 
 - (void)initDatas {
-    dataSource = @[@[@"系统设定", @[@"流量播放提醒", @"清除缓存"]], @[@"更多", @[@"去评分", @"关注我们", @"联系我们", @"用户协议", @"版本号"]]];
+    dataSource = @[@[@"问题", @[@"流量播放提醒", @"清除缓存"]], @[@"更多", @[@"去评分", @"关注我们", @"联系我们", @"用户协议", @"版本号"]]];
     
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
 //    NSString *prodName = [infoDictionary objectForKey:@"CFBundleName"];

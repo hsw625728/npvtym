@@ -51,6 +51,10 @@
 		58E01EED1E8B945500B19CD7 /* my_player_stop_white.gif in Resources */ = {isa = PBXBuildFile; fileRef = 58E01EE51E8B945500B19CD7 /* my_player_stop_white.gif */; };
 		58E01EEE1E8B945500B19CD7 /* my_player_stop.gif in Resources */ = {isa = PBXBuildFile; fileRef = 58E01EE61E8B945500B19CD7 /* my_player_stop.gif */; };
 		58E01F0E1E8B947200B19CD7 /* personalBackgroundImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 58E01EFE1E8B947200B19CD7 /* personalBackgroundImage.png */; };
+		58E01F171E8BCE0500B19CD7 /* MLBContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E01F0F1E8BCE0500B19CD7 /* MLBContent.m */; };
+		58E01F181E8BCE0500B19CD7 /* MLBFriend.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E01F101E8BCE0500B19CD7 /* MLBFriend.m */; };
+		58E01F191E8BCE0500B19CD7 /* MLBHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E01F111E8BCE0500B19CD7 /* MLBHelp.m */; };
+		58E01F1A1E8BCE0500B19CD7 /* MLBIAP.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E01F121E8BCE0500B19CD7 /* MLBIAP.m */; };
 		A4E966A21D336A29000524B7 /* MoVPNManage.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E966A11D336A29000524B7 /* MoVPNManage.m */; };
 		CC48B2E71C1E9C0900457F92 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CC48B2E61C1E9C0900457F92 /* main.m */; };
 		CC48B2EA1C1E9C0900457F92 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CC48B2E91C1E9C0900457F92 /* AppDelegate.m */; };
@@ -155,6 +159,14 @@
 		58E01EE51E8B945500B19CD7 /* my_player_stop_white.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = my_player_stop_white.gif; path = Resources/GIFs/my_player_stop_white.gif; sourceTree = "<group>"; };
 		58E01EE61E8B945500B19CD7 /* my_player_stop.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = my_player_stop.gif; path = Resources/GIFs/my_player_stop.gif; sourceTree = "<group>"; };
 		58E01EFE1E8B947200B19CD7 /* personalBackgroundImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = personalBackgroundImage.png; path = Resources/PNG/User/personalBackgroundImage.png; sourceTree = "<group>"; };
+		58E01F0F1E8BCE0500B19CD7 /* MLBContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MLBContent.m; path = ViewControllers/MLBContent.m; sourceTree = "<group>"; };
+		58E01F101E8BCE0500B19CD7 /* MLBFriend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MLBFriend.m; path = ViewControllers/MLBFriend.m; sourceTree = "<group>"; };
+		58E01F111E8BCE0500B19CD7 /* MLBHelp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MLBHelp.m; path = ViewControllers/MLBHelp.m; sourceTree = "<group>"; };
+		58E01F121E8BCE0500B19CD7 /* MLBIAP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MLBIAP.m; path = ViewControllers/MLBIAP.m; sourceTree = "<group>"; };
+		58E01F131E8BCE0500B19CD7 /* MLBContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MLBContent.h; path = ViewControllers/MLBContent.h; sourceTree = "<group>"; };
+		58E01F141E8BCE0500B19CD7 /* MLBFriend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MLBFriend.h; path = ViewControllers/MLBFriend.h; sourceTree = "<group>"; };
+		58E01F151E8BCE0500B19CD7 /* MLBHelp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MLBHelp.h; path = ViewControllers/MLBHelp.h; sourceTree = "<group>"; };
+		58E01F161E8BCE0500B19CD7 /* MLBIAP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MLBIAP.h; path = ViewControllers/MLBIAP.h; sourceTree = "<group>"; };
 		7A52E2F65527E7053CFB9B52 /* libPods-VpnTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VpnTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A45A45151D34976B00137EAE /* VpnExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = VpnExtension.entitlements; sourceTree = "<group>"; };
 		A45A45161D34976B00137EAE /* PacketTunnelProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PacketTunnelProvider.h; sourceTree = "<group>"; };
@@ -206,6 +218,14 @@
 		58E01E5C1E8B878D00B19CD7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				58E01F131E8BCE0500B19CD7 /* MLBContent.h */,
+				58E01F0F1E8BCE0500B19CD7 /* MLBContent.m */,
+				58E01F141E8BCE0500B19CD7 /* MLBFriend.h */,
+				58E01F101E8BCE0500B19CD7 /* MLBFriend.m */,
+				58E01F151E8BCE0500B19CD7 /* MLBHelp.h */,
+				58E01F111E8BCE0500B19CD7 /* MLBHelp.m */,
+				58E01F161E8BCE0500B19CD7 /* MLBIAP.h */,
+				58E01F121E8BCE0500B19CD7 /* MLBIAP.m */,
 				58E01ED01E8B8C0400B19CD7 /* MLBBaseViewController.h */,
 				58E01ED11E8B8C0400B19CD7 /* MLBBaseViewController.m */,
 				58E01E661E8B880400B19CD7 /* MLBSettingsViewController.h */,
@@ -685,6 +705,7 @@
 				58E01E7A1E8B88CE00B19CD7 /* DZNSegmentedControl.m in Sources */,
 				58E01E6A1E8B880400B19CD7 /* MLBSettingsViewController.m in Sources */,
 				58E01ECF1E8B8BF400B19CD7 /* MLBBaseView.m in Sources */,
+				58E01F191E8BCE0500B19CD7 /* MLBHelp.m in Sources */,
 				A4E966A21D336A29000524B7 /* MoVPNManage.m in Sources */,
 				58E01E891E8B88E600B19CD7 /* ParallaxHeaderView.m in Sources */,
 				58E01EB01E8B8B3400B19CD7 /* MLBUIFactory.m in Sources */,
@@ -693,7 +714,9 @@
 				58E01EA51E8B894400B19CD7 /* MLBSettingsSectionHeaderView.m in Sources */,
 				CC48B2EA1C1E9C0900457F92 /* AppDelegate.m in Sources */,
 				58E01EC81E8B8B5100B19CD7 /* UIImageView+MLBSDImageLoader.m in Sources */,
+				58E01F1A1E8BCE0500B19CD7 /* MLBIAP.m in Sources */,
 				58E01EB11E8B8B3400B19CD7 /* MLBUtilities.m in Sources */,
+				58E01F171E8BCE0500B19CD7 /* MLBContent.m in Sources */,
 				58E01E7B1E8B88CE00B19CD7 /* UIScrollView+DZNSegmentedControl.m in Sources */,
 				58E01EB51E8B8B3D00B19CD7 /* MLBHTTPRequester.m in Sources */,
 				58E01E951E8B88F100B19CD7 /* MenuItem.m in Sources */,
@@ -710,6 +733,7 @@
 				58E01EC41E8B8B5100B19CD7 /* MTLModel+MANullableScalar.m in Sources */,
 				58E01E991E8B88FA00B19CD7 /* XHRealTimeBlur.m in Sources */,
 				58E01E8A1E8B88E600B19CD7 /* UIImage+ImageEffects.m in Sources */,
+				58E01F181E8BCE0500B19CD7 /* MLBFriend.m in Sources */,
 				CC48B2E71C1E9C0900457F92 /* main.m in Sources */,
 				58E01ED81E8B8F8200B19CD7 /* MLBTapImageView.m in Sources */,
 				58E01E811E8B88D700B19CD7 /* UIColor+Equalable.m in Sources */,
@@ -838,6 +862,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = cn.mengyoutu.npvtym;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -859,6 +884,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

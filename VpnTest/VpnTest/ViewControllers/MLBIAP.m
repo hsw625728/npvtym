@@ -6,18 +6,18 @@
 //  Copyright © 2016 meilbn. All rights reserved.
 //
 
-#import "MLBSettingsViewController.h"
+#import "MLBIAP.h"
 #import "MLBSettingsSectionHeaderView.h"
 #import "MLBSettingsCell.h"
 
-@interface MLBSettingsViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface MLBIAPViewController () <UITableViewDataSource, UITableViewDelegate>
 
 
 @property (strong, nonatomic) UITableView *tableView;
 
 @end
 
-@implementation MLBSettingsViewController {
+@implementation MLBIAPViewController {
     NSArray *dataSource;
     NSString *version;
 }
@@ -34,7 +34,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"评价我们";
+    self.title = @"续费时长";
     //[self addNavigationBarRightMusicItem];
     
     UIButton *plantButton = [MLBUIFactory buttonWithImageName:@"close_highlighted" highlightImageName:@"close_normal" target:self action:@selector(DoneClick)];
@@ -51,7 +51,7 @@
 #pragma mark - Private Method
 
 - (void)initDatas {
-    dataSource = @[@[@"系统设定", @[@"流量播放提醒", @"清除缓存"]], @[@"更多", @[@"去评分", @"关注我们", @"联系我们", @"用户协议", @"版本号"]]];
+    dataSource = @[@[@"首冲特惠", @[@"10元包15天！"]], @[@"续费", @[@"25元包30天", @"126元包180天", @"198元包365天"]]];
     
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
 //    NSString *prodName = [infoDictionary objectForKey:@"CFBundleName"];
@@ -111,7 +111,7 @@
     
     NSArray *rowTitles = dataSource[indexPath.section][1];
     NSString *rowTitle = rowTitles[indexPath.row];
-    
+    /*
     if (indexPath.section == 0 && indexPath.row == 0) {// 流量播放提醒
         cell = [tableView dequeueReusableCellWithIdentifier:kSettingsCellIDWithSwitch forIndexPath:indexPath];
         [cell configureCellWithTitle:rowTitle isSwitchOn:[[UserDefaults objectForKey:MLBNetworkFlowRemindKey] isEqualToString:@"YES"]];
@@ -123,10 +123,10 @@
     } else if (indexPath.section == 1 && indexPath.row == 4) {// 版本号
         cell = [tableView dequeueReusableCellWithIdentifier:kSettingsCellIDWithVerison forIndexPath:indexPath];
         [cell configureCellWithTitle:rowTitle version:version];
-    } else {
+    } else {*/
         cell = [tableView dequeueReusableCellWithIdentifier:kSettingsCellIDWithArrow forIndexPath:indexPath];
         [cell configureCellWithTitle:rowTitle];
-    }
+    //}
     
     return cell;
 }

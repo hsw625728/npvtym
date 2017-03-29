@@ -12,6 +12,10 @@
 #import "MLBUserHomeHeaderView.h"
 #import "MLBSettingsSectionHeaderView.h"
 #import "MLBSettingsViewController.h"
+#import "MLBContent.h"
+#import "MLBHelp.h"
+#import "MLBFriend.h"
+#import "MLBIAP.h"
 
 @interface MLBUserHomeViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -153,14 +157,30 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    if (indexPath.section == 1 && indexPath.row == 1)
+    UINavigationController *nav = nil;
+    if (indexPath.section == 0 && indexPath.row == 0)
     {
-        [self presentLoginOptsViewController];
-        return;
+        nav = [[UINavigationController alloc] initWithRootViewController:[[MLBFriendViewController alloc] init]];
     }
-    
-    [self.navigationController pushViewController:[[MLBSettingsViewController alloc] init] animated:YES];
+    else if (indexPath.section == 0 && indexPath.row == 1)
+    {
+        nav = [[UINavigationController alloc] initWithRootViewController:[[MLBIAPViewController alloc] init]];
+    }
+    else if (indexPath.section == 1 && indexPath.row == 0)
+    {
+        nav = [[UINavigationController alloc] initWithRootViewController:[[MLBHelpViewController alloc] init]];
+    }
+    else if (indexPath.section == 1 && indexPath.row == 1)
+    {
+        nav = [[UINavigationController alloc] initWithRootViewController:[[MLBContentViewController alloc] init]];
+    }
+    else if (indexPath.section == 1 && indexPath.row == 2)
+    {
+        nav = [[UINavigationController alloc] initWithRootViewController:[[MLBSettingsViewController alloc] init]];
+    }
+    [nav setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+    [self presentViewController:nav animated:YES completion:NULL];
+    //[self.navigationController pushViewController:nav animated:YES];
 }
 
 @end

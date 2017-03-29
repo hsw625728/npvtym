@@ -177,7 +177,7 @@
 - (void)configureHeaderViewForTestMe {
     _userAvatarView.image = [UIImage imageNamed:@"personal"];
     _nicknameLabel.text = @"点击连接";
-    _oneCoinCountLabel.text = @"这个是什么？";
+    _oneCoinCountLabel.text = @"";
 }
 
 @end
