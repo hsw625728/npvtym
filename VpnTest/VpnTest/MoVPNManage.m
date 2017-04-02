@@ -173,6 +173,11 @@ static NSString * const serviceName = @"im.zorro.ipsec_demo.vpn_config"; // ÂèØ‰
             }];
             }
         }];
+        
+        [_vpnManager loadFromPreferencesWithCompletionHandler:^(NSError * _Nullable error) {
+            
+        }];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(outPutConnectionStatus) name:NEVPNStatusDidChangeNotification object:nil];
     }
 }
 
@@ -201,12 +206,17 @@ static NSString * const serviceName = @"im.zorro.ipsec_demo.vpn_config"; // ÂèØ‰
 
 
 - (void)vpnStart{
-    NSError *startError;
-    [_vpnManager.connection startVPNTunnelAndReturnError:&startError];
-    if (startError) {
-        NSLog(@"Start VPN failed: [%@]", startError.localizedDescription);
-    }
-    [self outPutConnectionStatus];
+    [_vpnManager loadFromPreferencesWithCompletionHandler:^(NSError *err){
+        if (!err){
+            NSError *startError;
+            [_vpnManager.connection startVPNTunnelAndReturnError:&startError];
+            if (startError) {
+                NSLog(@"Start VPN failed: [%@]", startError.localizedDescription);
+            }
+        }
+    }];
+    
+    //[self outPutConnectionStatus];
 }
 
 - (void)outPutConnectionStatus{
