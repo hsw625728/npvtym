@@ -163,6 +163,7 @@ static NSString * const serviceName = @"im.zorro.ipsec_demo.vpn_config"; // 可�
             _vpnManager.localizedDescription = _vpnTitle?_vpnTitle:@"Ipsec Test"; //设置VPN的名字 可以自定义
             
             // 保存设置    saveToPreferencesWithCompletionHandler
+            _vpnManager.enabled = YES;
             [_vpnManager saveToPreferencesWithCompletionHandler:^(NSError *error) {
                 if(error) {
                     completeHandle(NO,[NSString stringWithFormat:@"Save config failed [%@]", error.localizedDescription]);
@@ -206,6 +207,7 @@ static NSString * const serviceName = @"im.zorro.ipsec_demo.vpn_config"; // 可�
 
 
 - (void)vpnStart{
+    
     [_vpnManager loadFromPreferencesWithCompletionHandler:^(NSError *err){
         if (!err){
             NSError *startError;
@@ -224,27 +226,27 @@ static NSString * const serviceName = @"im.zorro.ipsec_demo.vpn_config"; // 可�
     switch (_vpnManager.connection.status) {
         case NEVPNStatusInvalid:
             NSLog(@"NEVPNStatusInvalid The VPN is not configured.");
-            appDelegate.gStatue = VPN_DISCONNECTED;
+            [appDelegate updateStatue:VPN_DISCONNECTED];
             break;
         case NEVPNStatusDisconnected:
             NSLog(@"NEVPNStatusDisconnected The VPN is disconnected.");
-            appDelegate.gStatue = VPN_DISCONNECTED;
+            [appDelegate updateStatue:VPN_DISCONNECTED];
             break;
         case NEVPNStatusConnecting:
             NSLog(@"NEVPNStatusConnecting The VPN is connecting.");
-            appDelegate.gStatue = VPN_CONNECTING;
+            [appDelegate updateStatue:VPN_CONNECTING];
             break;
         case NEVPNStatusConnected:
             NSLog(@"NEVPNStatusConnected The VPN is connected.");
-            appDelegate.gStatue = VPN_CONNECTED;
+            [appDelegate updateStatue:VPN_CONNECTED];
             break;
         case NEVPNStatusReasserting:
             NSLog(@"NEVPNStatusReasserting The VPN is reconnecting following loss of underlying network connectivity.");
-            appDelegate.gStatue = VPN_DISCONNECTED;
+            [appDelegate updateStatue:VPN_DISCONNECTED];
             break;
         case NEVPNStatusDisconnecting:
             NSLog(@"NEVPNStatusDisconnecting The VPN is disconnecting.");
-            appDelegate.gStatue = VPN_DISCONNECTED;
+            [appDelegate updateStatue:VPN_DISCONNECTING];
             break;
         default:
             break;

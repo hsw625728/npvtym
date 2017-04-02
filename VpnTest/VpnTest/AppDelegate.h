@@ -13,6 +13,7 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic, assign) VPNSTATUE gStatue;
 
+- (void)updateStatue:(VPNSTATUE)s;
 
 @end
 

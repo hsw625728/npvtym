@@ -99,6 +99,7 @@
     [vpnManage setVpnTitle:@"梦游兔VPN"];
     [vpnManage setServer:@"47.89.38.166" ID:@"myUserName" pwd:@"myUserPass" privateKey:@"myPSKkey"];
     [vpnManage setReconnect:NO];
+    [vpnManage loadFromPreferences:nil];
     [vpnManage saveConfigCompleteHandle:^(BOOL success, NSString *returnInfo) {
         NSLog(@"%@",returnInfo);
         if (success) {
@@ -117,15 +118,15 @@
     switch (appDelegate.gStatue) {
         case VPN_DISCONNECTED:
             [[MoVPNManage shareVPNManage] vpnStart];
-            _nicknameLabel.text = @"点击断开";
             break;
         case VPN_CONNECTING:
             [[MoVPNManage shareVPNManage] vpnStart];
-            _nicknameLabel.text = @"正在连接中...";
             break;
         case VPN_CONNECTED:
             [[MoVPNManage shareVPNManage] vpnStop];
-            _nicknameLabel.text = @"点击连接";
+            break;
+        case VPN_DISCONNECTING:
+            [[MoVPNManage shareVPNManage] vpnStop];
             break;
         default:
             break;
@@ -137,39 +138,6 @@
     //do something....
 }
 
-- (void)updateUI{
-    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-    NEVPNManager * p = NEVPNManager.sharedManager;
-    switch (p.connection.status) {
-        case NEVPNStatusInvalid:
-            NSLog(@"NEVPNStatusInvalid The VPN is not configured.");
-            appDelegate.gStatue = VPN_DISCONNECTED;
-            break;
-        case NEVPNStatusDisconnected:
-            NSLog(@"NEVPNStatusDisconnected The VPN is disconnected.");
-            appDelegate.gStatue = VPN_DISCONNECTED;
-            break;
-        case NEVPNStatusConnecting:
-            NSLog(@"NEVPNStatusConnecting The VPN is connecting.");
-            appDelegate.gStatue = VPN_CONNECTING;
-            break;
-        case NEVPNStatusConnected:
-            NSLog(@"NEVPNStatusConnected The VPN is connected.");
-            appDelegate.gStatue = VPN_CONNECTED;
-            break;
-        case NEVPNStatusReasserting:
-            NSLog(@"NEVPNStatusReasserting The VPN is reconnecting following loss of underlying network connectivity.");
-            appDelegate.gStatue = VPN_DISCONNECTED;
-            break;
-        case NEVPNStatusDisconnecting:
-            NSLog(@"NEVPNStatusDisconnecting The VPN is disconnecting.");
-            appDelegate.gStatue = VPN_DISCONNECTED;
-            break;
-        default:
-            break;
-    }
-}
-
 - (CGFloat)viewHeight {
     return CGRectGetHeight(self.frame);
 }
@@ -178,6 +146,10 @@
     _userAvatarView.image = [UIImage imageNamed:@"personal"];
     _nicknameLabel.text = @"点击连接";
     _oneCoinCountLabel.text = @"";
+}
+
+- (void)setTitle:(NSString*)title{
+    _nicknameLabel.text = title;
 }
 
 @end

@@ -13,7 +13,9 @@
 
 @end
 
-@implementation AppDelegate
+@implementation AppDelegate{
+    MLBUserHomeViewController *rootView;
+}
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -37,7 +39,8 @@
     //if (![[UserDefaults objectForKey:MLBLastShowIntroduceVersionAndBuild] isEqualToString:versionAndBuild]) {
     //    _window.rootViewController = [[MLBIntroduceViewController alloc] init];
     //} else {
-        _window.rootViewController = [[MLBUserHomeViewController alloc] init];
+    rootView = [[MLBUserHomeViewController alloc] init];
+    _window.rootViewController = rootView;
     //}
     
     return YES;
@@ -65,4 +68,24 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (void)updateStatue:(VPNSTATUE)s{
+    _gStatue = s;
+    switch (_gStatue) {
+        case VPN_DISCONNECTED:
+            [rootView updateTitle:@"点击连接"];
+            break;
+        case VPN_CONNECTING:
+            [rootView updateTitle:@"正在连接..."];
+            break;
+        case VPN_CONNECTED:
+            [rootView updateTitle:@"VPN已连接"];
+            break;
+        case VPN_DISCONNECTING:
+            [rootView updateTitle:@"正在断开..."];
+            break;
+            
+        default:
+            break;
+    }
+}
 @end
