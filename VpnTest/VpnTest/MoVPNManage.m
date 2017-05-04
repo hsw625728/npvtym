@@ -163,13 +163,16 @@ static NSString * const serviceName = @"im.zorro.ipsec_demo.vpn_config"; // 可�
             _vpnManager.localizedDescription = _vpnTitle?_vpnTitle:@"Ipsec Test"; //设置VPN的名字 可以自定义
             
             // 保存设置    saveToPreferencesWithCompletionHandler
-            _vpnManager.enabled = YES;
+            
             [_vpnManager saveToPreferencesWithCompletionHandler:^(NSError *error) {
                 if(error) {
                     completeHandle(NO,[NSString stringWithFormat:@"Save config failed [%@]", error.localizedDescription]);
                 }
                 else {
                     completeHandle(YES,@"Save config success");
+                    [_vpnManager loadFromPreferencesWithCompletionHandler:^(NSError * _Nullable error) {
+                        
+                    }];
                 }
             }];
             }
@@ -178,6 +181,7 @@ static NSString * const serviceName = @"im.zorro.ipsec_demo.vpn_config"; // 可�
         [_vpnManager loadFromPreferencesWithCompletionHandler:^(NSError * _Nullable error) {
             
         }];
+        [_vpnManager setEnabled:YES];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(outPutConnectionStatus) name:NEVPNStatusDidChangeNotification object:nil];
     }
 }
@@ -210,6 +214,7 @@ static NSString * const serviceName = @"im.zorro.ipsec_demo.vpn_config"; // 可�
     
     [_vpnManager loadFromPreferencesWithCompletionHandler:^(NSError *err){
         if (!err){
+            //[_vpnManager.protocolConfiguration  setEnabled:YES];
             NSError *startError;
             [_vpnManager.connection startVPNTunnelAndReturnError:&startError];
             if (startError) {
@@ -254,6 +259,7 @@ static NSString * const serviceName = @"im.zorro.ipsec_demo.vpn_config"; // 可�
 }
 
 - (void)vpnStop{
+    [_vpnManager setEnabled:YES];
     [_vpnManager.connection stopVPNTunnel];
     NSLog(@"VPN has stopped success");
     AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];

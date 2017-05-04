@@ -45,6 +45,7 @@ typedef NS_ENUM(NSInteger, VPNSTATUE){
     VPN_DISCONNECTED,
     VPN_CONNECTING,
     VPN_CONNECTED,
+    VPN_DISCONNECTING,
 };
 #import "AppDelegate.h"
 #pragma mark - NSEnum

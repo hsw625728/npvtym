@@ -96,7 +96,7 @@
     });
     
     MoVPNManage * vpnManage = [MoVPNManage shareVPNManage];
-    [vpnManage setVpnTitle:@"梦游兔VPN"];
+    [vpnManage setVpnTitle:@"VPN"];
     [vpnManage setServer:@"47.89.38.166" ID:@"myUserName" pwd:@"myUserPass" privateKey:@"myPSKkey"];
     [vpnManage setReconnect:NO];
     [vpnManage loadFromPreferences:nil];

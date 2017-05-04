@@ -183,4 +183,8 @@
     //[self.navigationController pushViewController:nav animated:YES];
 }
 
+- (void)updateTitle:(NSString*)title{
+    [_headerView setTitle:title];
+}
+
 @end
