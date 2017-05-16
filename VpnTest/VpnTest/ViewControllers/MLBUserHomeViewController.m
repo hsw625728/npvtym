@@ -56,9 +56,9 @@
 #pragma mark - Private Method
 
 - (void)initDatas {
-    sectionTitles = @[@"服务时长", @"关于梦游兔"];
-    rowTitles = @[@[@"邀请好友", @"时长续费"], @[@"帮助说明", @"联系我们", @"评价"]];
-    rowImageNames = @[@[@"nav_me_normal", @"tab_read_normal"], @[@"center_setting", @"tab_home_normal", @"tab_movie_normal"]];
+    sectionTitles = @[@"邀请好友", @"关于梦游兔"];
+    rowTitles = @[@[@"邀请好友"], @[@"帮助说明", @"联系我们", @"评价"]];
+    rowImageNames = @[@[@"nav_me_normal"/*, @"tab_read_normal"*/], @[@"center_setting", @"tab_home_normal", @"tab_movie_normal"]];
 }
 
 - (void)setupViews {
@@ -159,8 +159,23 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     UINavigationController *nav = nil;
     if (indexPath.section == 0 && indexPath.row == 0)
-    {
-        nav = [[UINavigationController alloc] initWithRootViewController:[[MLBFriendViewController alloc] init]];
+    {/*
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+        NSString *imgFilePath = [paths[0] stringByAppendingPathComponent:@"upload.jpg"];
+        
+        //这里好像应该写渲染后的图片
+        //NSData *imgData = UIImageJPEGRepresentation(_paintView.image, 0.9);
+        NSData *imgData = UIImageJPEGRepresentation(_paintView.renderedImage, 0.9);
+        
+        [imgData writeToFile:imgFilePath atomically:YES];
+        
+        static __strong UIDocumentInteractionController *documentInteractionController = nil;
+        documentInteractionController = [UIDocumentInteractionController interactionControllerWithURL:[NSURL fileURLWithPath:imgFilePath]];
+        //documentInteractionController.annotation = [NSDictionary dictionaryWithObject:@"Created with the Impression iOS app!" forKey:@"InstagramCaption"];
+        BOOL response = [documentInteractionController presentOpenInMenuFromRect:CGRectZero inView:self.view animated:YES];
+        
+        if (!response) [self showModalMessage:@"没有安装其他支持的应用。"];
+        */
     }
     else if (indexPath.section == 0 && indexPath.row == 1)
     {
@@ -183,8 +198,8 @@
     //[self.navigationController pushViewController:nav animated:YES];
 }
 
-- (void)updateTitle:(NSString*)title{
-    [_headerView setTitle:title];
+- (void)updateTitleAndIcon:(NSString*)title iconName:(NSString*)icon{
+    [_headerView setTitleAndIcon:title iconName:icon];
 }
 
 @end

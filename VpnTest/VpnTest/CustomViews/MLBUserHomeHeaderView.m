@@ -148,7 +148,8 @@
     _oneCoinCountLabel.text = @"";
 }
 
-- (void)setTitle:(NSString*)title{
+- (void)setTitleAndIcon:(NSString*)title iconName:(NSString*)icon{
+    _userAvatarView.image = [UIImage imageNamed:icon];
     _nicknameLabel.text = title;
 }
 

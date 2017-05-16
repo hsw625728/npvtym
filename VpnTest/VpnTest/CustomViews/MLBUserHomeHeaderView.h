@@ -14,6 +14,6 @@
 
 - (CGFloat)viewHeight;
 - (void)configureHeaderViewForTestMe;
-- (void)setTitle:(NSString*)title;
+- (void)setTitleAndIcon:(NSString*)title iconName:(NSString*)icon;
 
 @end

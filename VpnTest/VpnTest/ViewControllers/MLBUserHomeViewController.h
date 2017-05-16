@@ -10,6 +10,6 @@
 
 @interface MLBUserHomeViewController : MLBBaseViewController
 
-- (void)updateTitle:(NSString*)title;
+- (void)updateTitleAndIcon:(NSString*)title iconName:(NSString*)icon;
 
 @end
