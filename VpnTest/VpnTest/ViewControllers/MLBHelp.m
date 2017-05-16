@@ -51,7 +51,7 @@
 #pragma mark - Private Method
 
 - (void)initDatas {
-    dataSource = @[@[@"问题", @[@"流量播放提醒", @"清除缓存"]], @[@"更多", @[@"去评分", @"关注我们", @"联系我们", @"用户协议", @"版本号"]]];
+    dataSource = @[@[@"状态说明", @[@"首页上方是黑夜表示VPN处于断开状态", @"首页上方是白天表示VPN处于连接状态"]], @[@"连接VPN步骤", @[@"黑夜状态下点击月亮", @"系统开始尝试自动连接VPN服务器", @"画面变为白天表示VPN连接成功", @"可以退出软件进行自由地互联网访问"]], @[@"断开VPN步骤", @[@"白天状态表示VPN服务器以连接", @"点击太阳断开VPN服务器", @"断开后画面变成黑夜"]]];
     
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
 //    NSString *prodName = [infoDictionary objectForKey:@"CFBundleName"];
@@ -112,21 +112,8 @@
     NSArray *rowTitles = dataSource[indexPath.section][1];
     NSString *rowTitle = rowTitles[indexPath.row];
     
-    if (indexPath.section == 0 && indexPath.row == 0) {// 流量播放提醒
-        cell = [tableView dequeueReusableCellWithIdentifier:kSettingsCellIDWithSwitch forIndexPath:indexPath];
-        [cell configureCellWithTitle:rowTitle isSwitchOn:[[UserDefaults objectForKey:MLBNetworkFlowRemindKey] isEqualToString:@"YES"]];
-        __weak typeof(self) weakSelf = self;
-        cell.switchChanged = ^(BOOL isOn) {
-            __strong typeof(weakSelf) strongSelf = weakSelf;
-            [strongSelf networkFlowRemindSwitchDidChanged:isOn];
-        };
-    } else if (indexPath.section == 1 && indexPath.row == 4) {// 版本号
-        cell = [tableView dequeueReusableCellWithIdentifier:kSettingsCellIDWithVerison forIndexPath:indexPath];
-        [cell configureCellWithTitle:rowTitle version:version];
-    } else {
-        cell = [tableView dequeueReusableCellWithIdentifier:kSettingsCellIDWithArrow forIndexPath:indexPath];
-        [cell configureCellWithTitle:rowTitle];
-    }
+    cell = [tableView dequeueReusableCellWithIdentifier:kSettingsCellIDWithArrow forIndexPath:indexPath];
+    [cell configureCellWithTitle:rowTitle];
     
     return cell;
 }

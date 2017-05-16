@@ -60,9 +60,9 @@
 #pragma mark - Private Method
 
 - (void)initDatas {
-    sectionTitles = @[@"邀请好友", @"关于梦游兔"];
-    rowTitles = @[@[@"邀请好友"], @[@"帮助说明", @"联系我们", @"评价"]];
-    rowImageNames = @[@[@"nav_me_normal"/*, @"tab_read_normal"*/], @[@"center_setting", @"tab_home_normal", @"tab_movie_normal"]];
+    sectionTitles = @[@"帮助说明", @"关于梦游兔"];
+    rowTitles = @[@[@"帮助说明"], @[@"联系我们"/*, @"评价"*/]];
+    rowImageNames = @[@[@"center_setting"/*, @"tab_read_normal"*/], @[/*@"center_setting", @"tab_home_normal", */@"nav_me_normal"]];
 }
 
 - (void)setupViews {
@@ -173,7 +173,9 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     UINavigationController *nav = nil;
     if (indexPath.section == 0 && indexPath.row == 0)
-    {/*
+    {
+        nav = [[UINavigationController alloc] initWithRootViewController:[[MLBHelpViewController alloc] init]];
+        /*
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
         NSString *imgFilePath = [paths[0] stringByAppendingPathComponent:@"upload.jpg"];
         
@@ -197,7 +199,7 @@
     }
     else if (indexPath.section == 1 && indexPath.row == 0)
     {
-        nav = [[UINavigationController alloc] initWithRootViewController:[[MLBHelpViewController alloc] init]];
+        nav = [[UINavigationController alloc] initWithRootViewController:[[MLBContentViewController alloc] init]];
     }
     else if (indexPath.section == 1 && indexPath.row == 1)
     {

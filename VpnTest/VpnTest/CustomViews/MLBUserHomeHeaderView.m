@@ -98,8 +98,10 @@
     });
     
     MoVPNManage * vpnManage = [MoVPNManage shareVPNManage];
-    [vpnManage setVpnTitle:@"VPN"];
-    [vpnManage setServer:@"47.89.38.166" ID:@"myUserName" pwd:@"myUserPass" privateKey:@"myPSKkey"];
+    //[vpnManage setVpnTitle:@"VPN"];
+    //[vpnManage setServer:@"47.89.38.166" ID:@"myUserName" pwd:@"myUserPass" privateKey:@"myPSKkey"];
+    [vpnManage setVpnTitle:@"梦游兔VPN"];
+    [vpnManage setServer:@"47.89.38.166" ID:@"mengyoutu_cn" pwd:@"il18UI_3jHwN830d" privateKey:@"jJ38dh03dLIhrid"];
     [vpnManage setReconnect:NO];
     [vpnManage loadFromPreferences:nil];
     [vpnManage saveConfigCompleteHandle:^(BOOL success, NSString *returnInfo) {

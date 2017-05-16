@@ -91,7 +91,7 @@ NSString *const kSettingsCellIDWithVerison = @"MLBSettingsCellIDWithVersion";
             switchView;
         });
     } else if (self.reuseIdentifier == kSettingsCellIDWithArrow) {
-        UIImageView *forwardView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"forward_info"]];
+        /*UIImageView *forwardView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"forward_info"]];
         [self.contentView addSubview:forwardView];
         [forwardView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.sizeOffset(CGSizeMake(6, 10));
@@ -99,6 +99,7 @@ NSString *const kSettingsCellIDWithVerison = @"MLBSettingsCellIDWithVersion";
             make.left.greaterThanOrEqualTo(_titleLabel.mas_right).offset(8);
             make.right.equalTo(self.contentView).offset(-14);
         }];
+         */
     } else if (self.reuseIdentifier == kSettingsCellIDWithVerison) {
         _versionLabel = ({
             UILabel *label = [UILabel new];

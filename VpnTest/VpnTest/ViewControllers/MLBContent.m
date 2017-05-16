@@ -113,17 +113,14 @@
     NSString *rowTitle = rowTitles[indexPath.row];
     
     if (indexPath.section == 0 && indexPath.row == 0) {// 流量播放提醒
-        cell = [tableView dequeueReusableCellWithIdentifier:kSettingsCellIDWithSwitch forIndexPath:indexPath];
+        cell = [tableView dequeueReusableCellWithIdentifier:kSettingsCellIDWithArrow forIndexPath:indexPath];
         [cell configureCellWithTitle:rowTitle isSwitchOn:[[UserDefaults objectForKey:MLBNetworkFlowRemindKey] isEqualToString:@"YES"]];
         __weak typeof(self) weakSelf = self;
         cell.switchChanged = ^(BOOL isOn) {
             __strong typeof(weakSelf) strongSelf = weakSelf;
             [strongSelf networkFlowRemindSwitchDidChanged:isOn];
         };
-    } else if (indexPath.section == 1 && indexPath.row == 4) {// 版本号
-        cell = [tableView dequeueReusableCellWithIdentifier:kSettingsCellIDWithVerison forIndexPath:indexPath];
-        [cell configureCellWithTitle:rowTitle version:version];
-    } else {
+    }else {
         cell = [tableView dequeueReusableCellWithIdentifier:kSettingsCellIDWithArrow forIndexPath:indexPath];
         [cell configureCellWithTitle:rowTitle];
     }
