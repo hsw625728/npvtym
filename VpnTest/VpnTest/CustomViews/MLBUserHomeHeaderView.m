@@ -47,9 +47,9 @@
     
     _userAvatarView = ({
         MLBTapImageView *imageView = [MLBTapImageView new];
-        imageView.layer.cornerRadius = 30;
+        imageView.layer.cornerRadius = 20;
         imageView.layer.borderColor = [UIColor whiteColor].CGColor;
-        imageView.layer.borderWidth = 1;
+        imageView.layer.borderWidth = 0;
         imageView.clipsToBounds = YES;
         
         UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
@@ -58,13 +58,14 @@
         
         [self addSubview:imageView];
         [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.width.height.equalTo(@60);
-            make.top.equalTo(self).offset(64);
-            make.centerX.equalTo(self);
+            make.width.height.equalTo(@40);
+            make.top.equalTo(self).offset(0);
+            make.centerX.equalTo(self).offset(-120);
         }];
         
         imageView;
     });
+    
     
     _nicknameLabel = ({
         UILabel *label = [UILabel new];
@@ -74,7 +75,8 @@
         [self addSubview:label];
         [label mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(_userAvatarView.mas_bottom).offset(8);
-            make.left.right.equalTo(self);
+            make.centerX.equalTo(_userAvatarView.mas_centerX);
+            //make.left.right.equalTo(self);
         }];
         
         label;
@@ -143,7 +145,7 @@
 }
 
 - (void)configureHeaderViewForTestMe {
-    _userAvatarView.image = [UIImage imageNamed:@"personal"];
+    _userAvatarView.image = [UIImage imageNamed:@"moon2_88"];
     _nicknameLabel.text = @"点击连接";
     _oneCoinCountLabel.text = @"";
 }

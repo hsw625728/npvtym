@@ -294,7 +294,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VpnTest/MoVPNManage.m"
@@ -330,7 +330,7 @@
                   moduleName = "VpnTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/PangXie/mengyoutu/npvtym/VpnTest/VpnTest/MoVPNManage.m"
-                  timestampString = "516596038.642696"
+                  timestampString = "516619842.18002"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "167"
@@ -345,7 +345,7 @@
                   moduleName = "VpnTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/PangXie/mengyoutu/npvtym/VpnTest/VpnTest/MoVPNManage.m"
-                  timestampString = "516596038.644283"
+                  timestampString = "516619842.18174"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "168"

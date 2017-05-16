@@ -21,6 +21,10 @@
 
 @property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) MLBUserHomeHeaderView *headerView;
+@property (strong, nonatomic) UIImageView *headerImageViewMoon;
+@property (strong, nonatomic) ParallaxHeaderView *parallaxHeaderViewMoon;
+@property (strong, nonatomic) UIImageView *headerImageViewSun;
+@property (strong, nonatomic) ParallaxHeaderView *parallaxHeaderViewSun;
 
 @end
 
@@ -65,6 +69,33 @@
     _headerView = [[MLBUserHomeHeaderView alloc] initWithUserType:MLBUserTypeMe];
     [_headerView configureHeaderViewForTestMe];
     
+    
+    
+    
+    //设置太阳表头背景
+    _headerImageViewSun = [[UIImageView alloc] initWithImage:[UIImage mlb_imageWithName:@"middle_full" cached:NO]];
+    _headerImageViewSun.frame = CGRectMake(0, 0, SCREEN_WIDTH, 256);
+    _headerImageViewSun.contentMode = UIViewContentModeScaleAspectFill;
+    _parallaxHeaderViewSun = [ParallaxHeaderView parallaxHeaderViewWithSubView:_headerImageViewSun];
+    
+    [_parallaxHeaderViewSun addSubview:_headerView];
+    [_headerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.equalTo(@([_headerView viewHeight]));
+        make.left.bottom.right.equalTo(_parallaxHeaderViewSun);
+    }];
+    
+    //设置月亮表头背景
+    _headerImageViewMoon = [[UIImageView alloc] initWithImage:[UIImage mlb_imageWithName:@"middle_night_full" cached:NO]];
+    _headerImageViewMoon.frame = CGRectMake(0, 0, SCREEN_WIDTH, 256);
+    _headerImageViewMoon.contentMode = UIViewContentModeScaleAspectFill;
+    _parallaxHeaderViewMoon = [ParallaxHeaderView parallaxHeaderViewWithSubView:_headerImageViewMoon];
+    
+    [_parallaxHeaderViewMoon addSubview:_headerView];
+    [_headerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.equalTo(@([_headerView viewHeight]));
+        make.left.bottom.right.equalTo(_parallaxHeaderViewMoon);
+    }];
+    
     _tableView = ({
         UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
         tableView.backgroundColor = MLBViewControllerBGColor;
@@ -74,25 +105,8 @@
         [tableView registerClass:[MLBSettingsSectionHeaderView class] forHeaderFooterViewReuseIdentifier:kSettingsSectionHeaderViewID];
         tableView.rowHeight = [MLBUserHomeCell cellHeight];
         
-        UIImageView *headerImageView = [[UIImageView alloc] initWithImage:[UIImage mlb_imageWithName:@"personalBackgroundImage" cached:NO]];
-        headerImageView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 256);
-        headerImageView.contentMode = UIViewContentModeScaleAspectFill;
-        ParallaxHeaderView *parallaxHeaderView = [ParallaxHeaderView parallaxHeaderViewWithSubView:headerImageView];
         
-        UIImageView *shadowView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"movie_shadow"]];
-        [parallaxHeaderView addSubview:shadowView];
-        [shadowView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.height.equalTo(@50);
-            make.left.bottom.right.equalTo(parallaxHeaderView);
-        }];
-        
-        [parallaxHeaderView addSubview:_headerView];
-        [_headerView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.height.equalTo(@([_headerView viewHeight]));
-            make.left.bottom.right.equalTo(parallaxHeaderView);
-        }];
-        
-        tableView.tableHeaderView = parallaxHeaderView;
+        tableView.tableHeaderView = _parallaxHeaderViewMoon;
         [self.view addSubview:tableView];
         [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(self.view);
@@ -200,6 +214,24 @@
 
 - (void)updateTitleAndIcon:(NSString*)title iconName:(NSString*)icon{
     [_headerView setTitleAndIcon:title iconName:icon];
+    if (![title isEqualToString:@"VPN已连接"])
+    {
+        [_parallaxHeaderViewMoon addSubview:_headerView];
+        [_headerView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.equalTo(@([_headerView viewHeight]));
+            make.left.bottom.right.equalTo(_parallaxHeaderViewMoon);
+        }];
+        _tableView.tableHeaderView = _parallaxHeaderViewMoon;
+    }
+    else
+    {
+        [_parallaxHeaderViewSun addSubview:_headerView];
+        [_headerView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.equalTo(@([_headerView viewHeight]));
+            make.left.bottom.right.equalTo(_parallaxHeaderViewSun);
+        }];
+        _tableView.tableHeaderView = _parallaxHeaderViewSun;
+    }
 }
 
 @end

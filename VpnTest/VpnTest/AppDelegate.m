@@ -72,16 +72,16 @@
     _gStatue = s;
     switch (_gStatue) {
         case VPN_DISCONNECTED:
-            [rootView updateTitleAndIcon:@"点击连接" iconName:@"personal"];
+            [rootView updateTitleAndIcon:@"点击连接" iconName:@"moon2_88"];
             break;
         case VPN_CONNECTING:
-            [rootView updateTitleAndIcon:@"正在连接..." iconName:@"more_highlighted"];
+            [rootView updateTitleAndIcon:@"正在连接..." iconName:@"more_link"];
             break;
         case VPN_CONNECTED:
-            [rootView updateTitleAndIcon:@"VPN已连接" iconName:@"more_link"];
+            [rootView updateTitleAndIcon:@"VPN已连接" iconName:@"sun_88"];
             break;
         case VPN_DISCONNECTING:
-            [rootView updateTitleAndIcon:@"正在断开..." iconName:@"more_highlighted"];
+            [rootView updateTitleAndIcon:@"正在断开..." iconName:@"more_link"];
             break;
             
         default:
