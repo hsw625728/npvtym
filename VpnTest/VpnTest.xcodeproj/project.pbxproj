@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0452DF1CA9FBBBC4F45D19CA /* libPods-VpnTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A52E2F65527E7053CFB9B52 /* libPods-VpnTest.a */; };
+		587044771ED6C57A00A541E5 /* share_QR.png in Resources */ = {isa = PBXBuildFile; fileRef = 587044761ED6C57A00A541E5 /* share_QR.png */; };
+		587044791ED6C7CA00A541E5 /* ShareSDKConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 587044781ED6C7CA00A541E5 /* ShareSDKConnector.framework */; };
 		587A59A11E8A640800C91EE0 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 587A59A01E8A640800C91EE0 /* NetworkExtension.framework */; };
 		58E01E6A1E8B880400B19CD7 /* MLBSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E01E671E8B880400B19CD7 /* MLBSettingsViewController.m */; };
 		58E01E6B1E8B880400B19CD7 /* MLBUserHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E01E691E8B880400B19CD7 /* MLBUserHomeViewController.m */; };
@@ -35,7 +37,6 @@
 		58E01EC51E8B8B5100B19CD7 /* NSString+MLBUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E01EBB1E8B8B5100B19CD7 /* NSString+MLBUtilities.m */; };
 		58E01EC61E8B8B5100B19CD7 /* UIColor+MLBUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E01EBD1E8B8B5100B19CD7 /* UIColor+MLBUtilities.m */; };
 		58E01EC71E8B8B5100B19CD7 /* UIImage+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E01EBF1E8B8B5100B19CD7 /* UIImage+Common.m */; };
-		58E01EC81E8B8B5100B19CD7 /* UIImageView+MLBSDImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E01EC11E8B8B5100B19CD7 /* UIImageView+MLBSDImageLoader.m */; };
 		58E01EC91E8B8B5100B19CD7 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E01EC31E8B8B5100B19CD7 /* UIView+Frame.m */; };
 		58E01ECC1E8B8BEC00B19CD7 /* MLBBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E01ECB1E8B8BEC00B19CD7 /* MLBBaseCell.m */; };
 		58E01ECF1E8B8BF400B19CD7 /* MLBBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E01ECE1E8B8BF400B19CD7 /* MLBBaseView.m */; };
@@ -85,6 +86,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		587044761ED6C57A00A541E5 /* share_QR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = share_QR.png; path = Resources/PNG/User/share_QR.png; sourceTree = "<group>"; };
+		587044781ED6C7CA00A541E5 /* ShareSDKConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShareSDKConnector.framework; path = Pods/ShareSDK3/ShareSDK/Support/Required/ShareSDKConnector.framework; sourceTree = "<group>"; };
 		587A59A01E8A640800C91EE0 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		58E01E661E8B880400B19CD7 /* MLBSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MLBSettingsViewController.h; path = ViewControllers/MLBSettingsViewController.h; sourceTree = "<group>"; };
 		58E01E671E8B880400B19CD7 /* MLBSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MLBSettingsViewController.m; path = ViewControllers/MLBSettingsViewController.m; sourceTree = "<group>"; };
@@ -141,8 +144,6 @@
 		58E01EBD1E8B8B5100B19CD7 /* UIColor+MLBUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+MLBUtilities.m"; path = "Common/Categories/UIColor+MLBUtilities.m"; sourceTree = "<group>"; };
 		58E01EBE1E8B8B5100B19CD7 /* UIImage+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Common.h"; path = "Common/Categories/UIImage+Common.h"; sourceTree = "<group>"; };
 		58E01EBF1E8B8B5100B19CD7 /* UIImage+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Common.m"; path = "Common/Categories/UIImage+Common.m"; sourceTree = "<group>"; };
-		58E01EC01E8B8B5100B19CD7 /* UIImageView+MLBSDImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+MLBSDImageLoader.h"; path = "Common/Categories/UIImageView+MLBSDImageLoader.h"; sourceTree = "<group>"; };
-		58E01EC11E8B8B5100B19CD7 /* UIImageView+MLBSDImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+MLBSDImageLoader.m"; path = "Common/Categories/UIImageView+MLBSDImageLoader.m"; sourceTree = "<group>"; };
 		58E01EC21E8B8B5100B19CD7 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Frame.h"; path = "Common/Categories/UIView+Frame.h"; sourceTree = "<group>"; };
 		58E01EC31E8B8B5100B19CD7 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Frame.m"; path = "Common/Categories/UIView+Frame.m"; sourceTree = "<group>"; };
 		58E01ECA1E8B8BEC00B19CD7 /* MLBBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MLBBaseCell.h; path = CustomViews/Cells/MLBBaseCell.h; sourceTree = "<group>"; };
@@ -206,6 +207,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				587044791ED6C7CA00A541E5 /* ShareSDKConnector.framework in Frameworks */,
 				CC6E043F1C1FC27900F6E3F2 /* SystemConfiguration.framework in Frameworks */,
 				587A59A11E8A640800C91EE0 /* NetworkExtension.framework in Frameworks */,
 				CC48B3041C1EB45300457F92 /* Security.framework in Frameworks */,
@@ -219,6 +221,7 @@
 		587A599F1E8A640800C91EE0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				587044781ED6C7CA00A541E5 /* ShareSDKConnector.framework */,
 				587A59A01E8A640800C91EE0 /* NetworkExtension.framework */,
 				7A52E2F65527E7053CFB9B52 /* libPods-VpnTest.a */,
 			);
@@ -392,8 +395,6 @@
 				58E01EBD1E8B8B5100B19CD7 /* UIColor+MLBUtilities.m */,
 				58E01EBE1E8B8B5100B19CD7 /* UIImage+Common.h */,
 				58E01EBF1E8B8B5100B19CD7 /* UIImage+Common.m */,
-				58E01EC01E8B8B5100B19CD7 /* UIImageView+MLBSDImageLoader.h */,
-				58E01EC11E8B8B5100B19CD7 /* UIImageView+MLBSDImageLoader.m */,
 				58E01EC21E8B8B5100B19CD7 /* UIView+Frame.h */,
 				58E01EC31E8B8B5100B19CD7 /* UIView+Frame.m */,
 			);
@@ -452,6 +453,7 @@
 		58E01EDA1E8B942A00B19CD7 /* PNG */ = {
 			isa = PBXGroup;
 			children = (
+				587044761ED6C57A00A541E5 /* share_QR.png */,
 				58E10B521ECAF27000D44C8C /* middle_full.png */,
 				58E10B531ECAF27000D44C8C /* middle_night_full.png */,
 				58E10B4C1ECAD73600D44C8C /* large.png */,
@@ -604,7 +606,7 @@
 					CC48B2E11C1E9C0900457F92 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = 887CVK63XR;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
 								enabled = 1;
@@ -648,6 +650,7 @@
 				CC48B2F51C1E9C0900457F92 /* LaunchScreen.storyboard in Resources */,
 				58E10B541ECAF27000D44C8C /* middle_full.png in Resources */,
 				CC48B2F21C1E9C0900457F92 /* Assets.xcassets in Resources */,
+				587044771ED6C57A00A541E5 /* share_QR.png in Resources */,
 				58E10B511ECAD73600D44C8C /* small.png in Resources */,
 				58E01EEE1E8B945500B19CD7 /* my_player_stop.gif in Resources */,
 				58E10B501ECAD73600D44C8C /* middle.png in Resources */,
@@ -733,7 +736,6 @@
 				58E01E801E8B88D700B19CD7 /* MZSelectableLabel.m in Sources */,
 				58E01EA51E8B894400B19CD7 /* MLBSettingsSectionHeaderView.m in Sources */,
 				CC48B2EA1C1E9C0900457F92 /* AppDelegate.m in Sources */,
-				58E01EC81E8B8B5100B19CD7 /* UIImageView+MLBSDImageLoader.m in Sources */,
 				58E01F1A1E8BCE0500B19CD7 /* MLBIAP.m in Sources */,
 				58E01EB11E8B8B3400B19CD7 /* MLBUtilities.m in Sources */,
 				58E01F171E8BCE0500B19CD7 /* MLBContent.m in Sources */,
@@ -874,6 +876,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/ShareSDK3/ShareSDK/Support/Required",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ./VpnTest/PrefixHeader.pch;
 				INFOPLIST_FILE = VpnTest/Info.plist;
@@ -893,8 +899,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = VpnTest/VpnTest.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = 887CVK63XR;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/ShareSDK3/ShareSDK/Support/Required",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ./VpnTest/PrefixHeader.pch;
 				INFOPLIST_FILE = VpnTest/Info.plist;
@@ -902,8 +912,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.mengyoutu.npvtym;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "70ddd9f1-e741-4233-95b6-c06967f0a418";
-				PROVISIONING_PROFILE_SPECIFIER = VPN;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

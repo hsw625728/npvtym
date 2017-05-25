@@ -16,6 +16,9 @@
 #import "MLBHelp.h"
 #import "MLBFriend.h"
 #import "MLBIAP.h"
+//分享功能
+#import <ShareSDK/ShareSDK.h>
+#import <ShareSDKUI/ShareSDK+SSUI.h>
 
 @interface MLBUserHomeViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -61,8 +64,8 @@
 
 - (void)initDatas {
     sectionTitles = @[@"帮助说明", @"关于梦游兔"];
-    rowTitles = @[@[@"帮助说明"], @[@"联系我们"/*, @"评价"*/]];
-    rowImageNames = @[@[@"center_setting"/*, @"tab_read_normal"*/], @[/*@"center_setting", @"tab_home_normal", */@"nav_me_normal"]];
+    rowTitles = @[@[@"帮助说明"], @[@"联系我们", @"分享给朋友"]];
+    rowImageNames = @[@[@"center_setting"/*, @"tab_read_normal"*/], @[@"center_setting", /*@"tab_home_normal", */@"nav_me_normal"]];
 }
 
 - (void)setupViews {
@@ -175,6 +178,8 @@
     if (indexPath.section == 0 && indexPath.row == 0)
     {
         nav = [[UINavigationController alloc] initWithRootViewController:[[MLBHelpViewController alloc] init]];
+        [nav setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+        [self presentViewController:nav animated:YES completion:NULL];
         /*
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
         NSString *imgFilePath = [paths[0] stringByAppendingPathComponent:@"upload.jpg"];
@@ -196,21 +201,71 @@
     else if (indexPath.section == 0 && indexPath.row == 1)
     {
         nav = [[UINavigationController alloc] initWithRootViewController:[[MLBIAPViewController alloc] init]];
+        [nav setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+        [self presentViewController:nav animated:YES completion:NULL];
     }
     else if (indexPath.section == 1 && indexPath.row == 0)
     {
         nav = [[UINavigationController alloc] initWithRootViewController:[[MLBContentViewController alloc] init]];
+        [nav setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+        [self presentViewController:nav animated:YES completion:NULL];
     }
     else if (indexPath.section == 1 && indexPath.row == 1)
     {
-        nav = [[UINavigationController alloc] initWithRootViewController:[[MLBContentViewController alloc] init]];
+        //nav = [[UINavigationController alloc] initWithRootViewController:[[MLBContentViewController alloc] init]];
+        //分享给朋友
+        //1、创建分享参数
+        NSArray* imageArray = @[[UIImage imageNamed:@"share_QR.png"]];
+        //（注意：图片必须要在Xcode左边目录里面，名称必须要传正确，如果要分享网络图片，可以这样传iamge参数 images:@[@"http://mob.com/Assets/images/logo.png?v=20150320"]）
+        if (imageArray) {
+            
+            NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
+            [shareParams SSDKSetupShareParamsByText:@"给你推荐一个高速稳定的VPN，一键连接，高速稳定。让你上Facebook、YouTube、Google、Gmail、Instagram、Pinterest......给你带来前所未有翱翔世界的快感！"
+                                             images:imageArray
+                                                url:[NSURL URLWithString:@"https://itunes.apple.com/us/app/id1220366660?l=zh&ls=1&mt=8"]
+                                              title:@"强烈推荐"
+                                               type:SSDKContentTypeAuto];
+            //2、分享（可以弹出我们的分享菜单和编辑界面）
+            //要显示菜单的视图, iPad版中此参数作为弹出菜单的参照视图，只有传这个才可以弹出我们的分享菜单，可以传分享的按钮对象或者自己创建小的view 对象，iPhone可以传nil不会影响
+            [ShareSDK showShareActionSheet:nil items:nil
+                               shareParams:shareParams
+                       onShareStateChanged:^(SSDKResponseState state, SSDKPlatformType platformType, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error, BOOL end)
+            {
+                           
+                           switch (state)
+                           {
+                               case SSDKResponseStateSuccess:
+                               {
+                                   UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"分享成功"
+                                                                                       message:nil
+                                                                                      delegate:nil
+                                                                             cancelButtonTitle:@"确定"
+                                                                             otherButtonTitles:nil];
+                                   [alertView show];
+                                   break;
+                               }
+                               case SSDKResponseStateFail:
+                               {
+                                   UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"分享失败"
+                                                                                   message:[NSString stringWithFormat:@"%@",error]
+                                                                                  delegate:nil
+                                                                         cancelButtonTitle:@"OK"
+                                                                         otherButtonTitles:nil, nil];
+                                   [alert show];
+                                   break;
+                               }
+                               default:
+                                   break;
+                           }
+            }];
+        }
     }
     else if (indexPath.section == 1 && indexPath.row == 2)
     {
         nav = [[UINavigationController alloc] initWithRootViewController:[[MLBSettingsViewController alloc] init]];
+        [nav setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+        [self presentViewController:nav animated:YES completion:NULL];
     }
-    [nav setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
-    [self presentViewController:nav animated:YES completion:NULL];
     //[self.navigationController pushViewController:nav animated:YES];
 }
 

@@ -36,7 +36,8 @@
 }
 
 - (void)setImageWithURL:(NSString *)imgURL placeholderImageName:(NSString *)placeholderImageName tapBlock:(TapAction)tapAction {
-    [self mlb_sd_setImageWithURL:imgURL placeholderImageName:placeholderImageName];
+    //更新了pod的版本后，这个函数没有了，目前没用到
+    //[self mlb_sd_setImageWithURL:imgURL placeholderImageName:placeholderImageName];
     [self addTapBlock:tapAction];
 }
 
