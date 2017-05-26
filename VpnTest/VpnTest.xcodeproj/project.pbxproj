@@ -10,6 +10,7 @@
 		0452DF1CA9FBBBC4F45D19CA /* libPods-VpnTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A52E2F65527E7053CFB9B52 /* libPods-VpnTest.a */; };
 		587044771ED6C57A00A541E5 /* share_QR.png in Resources */ = {isa = PBXBuildFile; fileRef = 587044761ED6C57A00A541E5 /* share_QR.png */; };
 		587044791ED6C7CA00A541E5 /* ShareSDKConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 587044781ED6C7CA00A541E5 /* ShareSDKConnector.framework */; };
+		5870447B1ED8195D00A541E5 /* Icon108.png in Resources */ = {isa = PBXBuildFile; fileRef = 5870447A1ED8195D00A541E5 /* Icon108.png */; };
 		587A59A11E8A640800C91EE0 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 587A59A01E8A640800C91EE0 /* NetworkExtension.framework */; };
 		58E01E6A1E8B880400B19CD7 /* MLBSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E01E671E8B880400B19CD7 /* MLBSettingsViewController.m */; };
 		58E01E6B1E8B880400B19CD7 /* MLBUserHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E01E691E8B880400B19CD7 /* MLBUserHomeViewController.m */; };
@@ -88,6 +89,7 @@
 /* Begin PBXFileReference section */
 		587044761ED6C57A00A541E5 /* share_QR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = share_QR.png; path = Resources/PNG/User/share_QR.png; sourceTree = "<group>"; };
 		587044781ED6C7CA00A541E5 /* ShareSDKConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShareSDKConnector.framework; path = Pods/ShareSDK3/ShareSDK/Support/Required/ShareSDKConnector.framework; sourceTree = "<group>"; };
+		5870447A1ED8195D00A541E5 /* Icon108.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon108.png; path = Resources/PNG/User/Icon108.png; sourceTree = "<group>"; };
 		587A59A01E8A640800C91EE0 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		58E01E661E8B880400B19CD7 /* MLBSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MLBSettingsViewController.h; path = ViewControllers/MLBSettingsViewController.h; sourceTree = "<group>"; };
 		58E01E671E8B880400B19CD7 /* MLBSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MLBSettingsViewController.m; path = ViewControllers/MLBSettingsViewController.m; sourceTree = "<group>"; };
@@ -453,6 +455,7 @@
 		58E01EDA1E8B942A00B19CD7 /* PNG */ = {
 			isa = PBXGroup;
 			children = (
+				5870447A1ED8195D00A541E5 /* Icon108.png */,
 				587044761ED6C57A00A541E5 /* share_QR.png */,
 				58E10B521ECAF27000D44C8C /* middle_full.png */,
 				58E10B531ECAF27000D44C8C /* middle_night_full.png */,
@@ -652,6 +655,7 @@
 				CC48B2F21C1E9C0900457F92 /* Assets.xcassets in Resources */,
 				587044771ED6C57A00A541E5 /* share_QR.png in Resources */,
 				58E10B511ECAD73600D44C8C /* small.png in Resources */,
+				5870447B1ED8195D00A541E5 /* Icon108.png in Resources */,
 				58E01EEE1E8B945500B19CD7 /* my_player_stop.gif in Resources */,
 				58E10B501ECAD73600D44C8C /* middle.png in Resources */,
 				58E01F0E1E8B947200B19CD7 /* personalBackgroundImage.png in Resources */,

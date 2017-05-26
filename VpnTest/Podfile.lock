@@ -51,9 +51,15 @@ PODS:
     - ShareSDK3/ShareSDK (= 3.6.3)
   - ShareSDK3/ShareSDK (3.6.3):
     - MOBFoundation
+  - ShareSDK3/ShareSDKPlatforms/Copy (3.6.3):
+    - MOBFoundation
+  - ShareSDK3/ShareSDKPlatforms/Mail (3.6.3):
+    - MOBFoundation
   - ShareSDK3/ShareSDKPlatforms/QQ (3.6.3):
     - MOBFoundation
   - ShareSDK3/ShareSDKPlatforms/SinaWeibo (3.6.3):
+    - MOBFoundation
+  - ShareSDK3/ShareSDKPlatforms/SMS (3.6.3):
     - MOBFoundation
   - ShareSDK3/ShareSDKPlatforms/WeChat (3.6.3):
     - MOBFoundation
@@ -88,8 +94,11 @@ DEPENDENCIES:
   - SDCycleScrollView
   - SDWebImage
   - ShareSDK3
+  - ShareSDK3/ShareSDKPlatforms/Copy
+  - ShareSDK3/ShareSDKPlatforms/Mail
   - ShareSDK3/ShareSDKPlatforms/QQ
   - ShareSDK3/ShareSDKPlatforms/SinaWeibo
+  - ShareSDK3/ShareSDKPlatforms/SMS
   - ShareSDK3/ShareSDKPlatforms/WeChat
   - ShareSDK3/ShareSDKUI
   - SwipeView
@@ -129,6 +138,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   ZYCornerRadius: 485a8e9304d16d1620641054a08b9c0f55dd512c
 
-PODFILE CHECKSUM: 63c3962e45151f2993dd8dcb82fe16391e40aa57
+PODFILE CHECKSUM: 7ebc078cb9ab4131b86b8d2053ac57d667569268
 
 COCOAPODS: 1.1.1

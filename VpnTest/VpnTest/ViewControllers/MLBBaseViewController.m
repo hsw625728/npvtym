@@ -211,7 +211,7 @@
 - (void)showPopMenuViewWithMenuSelectedBlock:(MenuSelectedBlock)block {
     if (!_popMenu) {
         NSArray *imgNames = @[@"more_wechat", @"more_moments", @"more_sina", @"more_qq", @"more_link", @"more_collection"];
-        NSArray *titles = @[@"微信好友", @"朋友圈", @"微博", @"QQ", @"复制链接", @"收藏"];
+        NSArray *titles = @[@"微信", @"朋友圈", @"微博", @"QQ", @"邮件", @"短信"];
         NSArray *colors = @[[UIColor colorWithRGBHex:0x70E08D],
                             [UIColor colorWithRGBHex:0x70E08D],
                             [UIColor colorWithRGBHex:0xFF8467],

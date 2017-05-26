@@ -13,8 +13,8 @@ typedef NS_ENUM(NSUInteger, MLBPopMenuType) {
     MLBPopMenuTypeMoments,// 朋友圈
     MLBPopMenuTypeWeibo,// 微博
     MLBPopMenuTypeQQ,// QQ
-    MLBPopMenuTypeCopyURL,// 复制链接
-    MLBPopMenuTypeFavorite,// 收藏
+    MLBPopMenuTypeMail,// 邮件
+    MLBPopMenuTypeSMS,// 短信（iMessage）
 };
 
 typedef void(^MenuSelectedBlock)(MLBPopMenuType menuType);

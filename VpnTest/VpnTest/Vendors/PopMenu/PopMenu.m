@@ -87,7 +87,7 @@
             UILabel *label = [UILabel new];
             label.textColor = [UIColor colorWithWhite:127 / 255.0 alpha:1];// #7F7F7F
             label.font = FontWithSize(16);
-            label.text = @"分享 & 收藏";
+            label.text = @"分享给朋友";
             label.textAlignment = NSTextAlignmentCenter;
             [self addSubview:label];
             [label mas_makeConstraints:^(MASConstraintMaker *make) {

@@ -37,12 +37,14 @@
     _gStatue = VPN_DISCONNECTED;
     
     //分享功能
-    [ShareSDK registerApp:@"iosv1101"
+    [ShareSDK registerApp:@"1e29e7dde0dfa"
      
           activePlatforms:@[
                             @(SSDKPlatformTypeSinaWeibo),
                             @(SSDKPlatformTypeWechat),
-                            @(SSDKPlatformTypeQQ)]
+                            @(SSDKPlatformTypeQQ),
+                            @(SSDKPlatformTypeMail),
+                            @(SSDKPlatformTypeSMS)]
                  onImport:^(SSDKPlatformType platformType)
      {
          switch (platformType)
