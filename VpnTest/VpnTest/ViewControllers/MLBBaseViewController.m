@@ -16,6 +16,16 @@
 #import "MLBUserHomeViewController.h"
 //#import "MLBSearchViewController.h"
 
+//腾讯开放平台（对应QQ和QQ空间）SDK头文件
+#import <TencentOpenAPI/TencentOAuth.h>
+#import <TencentOpenAPI/QQApiInterface.h>
+
+//微信SDK头文件
+#import "WXApi.h"
+
+//新浪微博SDK头文件
+#import "WeiboSDK.h"
+
 @interface MLBBaseViewController ()
 
 @property (strong, nonatomic) YLImageView *playerView;
@@ -210,6 +220,7 @@
 
 - (void)showPopMenuViewWithMenuSelectedBlock:(MenuSelectedBlock)block {
     if (!_popMenu) {
+            
         NSArray *imgNames = @[@"more_wechat", @"more_moments", @"more_sina", @"more_qq", @"more_link", @"more_collection"];
         NSArray *titles = @[@"微信", @"朋友圈", @"微博", @"QQ", @"邮件", @"短信"];
         NSArray *colors = @[[UIColor colorWithRGBHex:0x70E08D],
@@ -220,6 +231,27 @@
                             [UIColor colorWithRGBHex:0xF6CC41]];
         NSMutableArray *items = [NSMutableArray arrayWithCapacity:imgNames.count];
         for (NSInteger i = 0; i < imgNames.count; i++) {
+            /*
+            BOOL test = [WXApi isWXAppInstalled];
+            BOOL test1 = [WXApi isWXAppSupportApi];
+            BOOL test2 = [WeiboSDK isWeiboAppInstalled];
+            BOOL test3 = [WeiboSDK isCanSSOInWeiboApp];
+            BOOL test4 = [WeiboSDK isCanShareInWeiboAPP];
+            if (i == 1 || i == 0)
+            {
+                if (!([WXApi isWXAppInstalled] && [WXApi isWXAppSupportApi]))
+                {
+                    continue;
+                }
+            }
+            
+            if (i == 2)
+            {
+                if (!([WeiboSDK isWeiboAppInstalled] && [WeiboSDK isCanSSOInWeiboApp] && [WeiboSDK isCanShareInWeiboAPP]))
+                {
+                    continue;
+                }
+            }*/
             MenuItem *item = [[MenuItem alloc] initWithTitle:titles[i] iconName:imgNames[i] glowColor:colors[i] index:i];
             [items addObject:item];
         }
