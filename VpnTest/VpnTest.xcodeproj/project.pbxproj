@@ -11,7 +11,11 @@
 		587044771ED6C57A00A541E5 /* share_QR.png in Resources */ = {isa = PBXBuildFile; fileRef = 587044761ED6C57A00A541E5 /* share_QR.png */; };
 		587044791ED6C7CA00A541E5 /* ShareSDKConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 587044781ED6C7CA00A541E5 /* ShareSDKConnector.framework */; };
 		5870447B1ED8195D00A541E5 /* Icon108.png in Resources */ = {isa = PBXBuildFile; fileRef = 5870447A1ED8195D00A541E5 /* Icon108.png */; };
+		5870452B1EDEB5A400A541E5 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5870452A1EDEB5A400A541E5 /* ImageIO.framework */; };
+		5870452D1EDEB5AD00A541E5 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5870452C1EDEB5AD00A541E5 /* libsqlite3.0.tbd */; };
 		587A59A11E8A640800C91EE0 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 587A59A01E8A640800C91EE0 /* NetworkExtension.framework */; };
+		5882EBAC1F137A8700C60754 /* MLBAppList.m in Sources */ = {isa = PBXBuildFile; fileRef = 5882EBA91F137A8700C60754 /* MLBAppList.m */; };
+		5882EBAD1F137A8700C60754 /* MLBRepire.m in Sources */ = {isa = PBXBuildFile; fileRef = 5882EBAB1F137A8700C60754 /* MLBRepire.m */; };
 		58E01E6A1E8B880400B19CD7 /* MLBSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E01E671E8B880400B19CD7 /* MLBSettingsViewController.m */; };
 		58E01E6B1E8B880400B19CD7 /* MLBUserHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E01E691E8B880400B19CD7 /* MLBUserHomeViewController.m */; };
 		58E01E751E8B88C400B19CD7 /* AAPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E01E741E8B88C400B19CD7 /* AAPullToRefresh.m */; };
@@ -90,7 +94,13 @@
 		587044761ED6C57A00A541E5 /* share_QR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = share_QR.png; path = Resources/PNG/User/share_QR.png; sourceTree = "<group>"; };
 		587044781ED6C7CA00A541E5 /* ShareSDKConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShareSDKConnector.framework; path = Pods/ShareSDK3/ShareSDK/Support/Required/ShareSDKConnector.framework; sourceTree = "<group>"; };
 		5870447A1ED8195D00A541E5 /* Icon108.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon108.png; path = Resources/PNG/User/Icon108.png; sourceTree = "<group>"; };
+		5870452A1EDEB5A400A541E5 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		5870452C1EDEB5AD00A541E5 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		587A59A01E8A640800C91EE0 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		5882EBA81F137A8700C60754 /* MLBAppList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MLBAppList.h; path = ViewControllers/MLBAppList.h; sourceTree = "<group>"; };
+		5882EBA91F137A8700C60754 /* MLBAppList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MLBAppList.m; path = ViewControllers/MLBAppList.m; sourceTree = "<group>"; };
+		5882EBAA1F137A8700C60754 /* MLBRepire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MLBRepire.h; path = ViewControllers/MLBRepire.h; sourceTree = "<group>"; };
+		5882EBAB1F137A8700C60754 /* MLBRepire.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MLBRepire.m; path = ViewControllers/MLBRepire.m; sourceTree = "<group>"; };
 		58E01E661E8B880400B19CD7 /* MLBSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MLBSettingsViewController.h; path = ViewControllers/MLBSettingsViewController.h; sourceTree = "<group>"; };
 		58E01E671E8B880400B19CD7 /* MLBSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MLBSettingsViewController.m; path = ViewControllers/MLBSettingsViewController.m; sourceTree = "<group>"; };
 		58E01E681E8B880400B19CD7 /* MLBUserHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MLBUserHomeViewController.h; path = ViewControllers/MLBUserHomeViewController.h; sourceTree = "<group>"; };
@@ -209,6 +219,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5870452D1EDEB5AD00A541E5 /* libsqlite3.0.tbd in Frameworks */,
+				5870452B1EDEB5A400A541E5 /* ImageIO.framework in Frameworks */,
 				587044791ED6C7CA00A541E5 /* ShareSDKConnector.framework in Frameworks */,
 				CC6E043F1C1FC27900F6E3F2 /* SystemConfiguration.framework in Frameworks */,
 				587A59A11E8A640800C91EE0 /* NetworkExtension.framework in Frameworks */,
@@ -223,6 +235,8 @@
 		587A599F1E8A640800C91EE0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5870452C1EDEB5AD00A541E5 /* libsqlite3.0.tbd */,
+				5870452A1EDEB5A400A541E5 /* ImageIO.framework */,
 				587044781ED6C7CA00A541E5 /* ShareSDKConnector.framework */,
 				587A59A01E8A640800C91EE0 /* NetworkExtension.framework */,
 				7A52E2F65527E7053CFB9B52 /* libPods-VpnTest.a */,
@@ -233,6 +247,10 @@
 		58E01E5C1E8B878D00B19CD7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				5882EBA81F137A8700C60754 /* MLBAppList.h */,
+				5882EBA91F137A8700C60754 /* MLBAppList.m */,
+				5882EBAA1F137A8700C60754 /* MLBRepire.h */,
+				5882EBAB1F137A8700C60754 /* MLBRepire.m */,
 				58E01F131E8BCE0500B19CD7 /* MLBContent.h */,
 				58E01F0F1E8BCE0500B19CD7 /* MLBContent.m */,
 				58E01F141E8BCE0500B19CD7 /* MLBFriend.h */,
@@ -608,8 +626,7 @@
 				TargetAttributes = {
 					CC48B2E11C1E9C0900457F92 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 887CVK63XR;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Keychain = {
 								enabled = 1;
@@ -756,12 +773,14 @@
 				58E01EA61E8B894400B19CD7 /* MLBUserHomeHeaderView.m in Sources */,
 				58E01ECC1E8B8BEC00B19CD7 /* MLBBaseCell.m in Sources */,
 				58E01E9F1E8B893B00B19CD7 /* MLBSettingsCell.m in Sources */,
+				5882EBAC1F137A8700C60754 /* MLBAppList.m in Sources */,
 				58E01EC41E8B8B5100B19CD7 /* MTLModel+MANullableScalar.m in Sources */,
 				58E01E991E8B88FA00B19CD7 /* XHRealTimeBlur.m in Sources */,
 				58E01E8A1E8B88E600B19CD7 /* UIImage+ImageEffects.m in Sources */,
 				58E01F181E8BCE0500B19CD7 /* MLBFriend.m in Sources */,
 				CC48B2E71C1E9C0900457F92 /* main.m in Sources */,
 				58E01ED81E8B8F8200B19CD7 /* MLBTapImageView.m in Sources */,
+				5882EBAD1F137A8700C60754 /* MLBRepire.m in Sources */,
 				58E01E811E8B88D700B19CD7 /* UIColor+Equalable.m in Sources */,
 				58E01E6B1E8B880400B19CD7 /* MLBUserHomeViewController.m in Sources */,
 			);
@@ -903,8 +922,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = VpnTest/VpnTest.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = 887CVK63XR;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/ShareSDK3/ShareSDK/Support/Required",
@@ -916,8 +935,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.mengyoutu.npvtym;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "70ddd9f1-e741-4233-95b6-c06967f0a418";
+				PROVISIONING_PROFILE_SPECIFIER = VPN;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

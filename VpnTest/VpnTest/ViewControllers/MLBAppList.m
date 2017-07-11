@@ -6,18 +6,18 @@
 //  Copyright © 2016 meilbn. All rights reserved.
 //
 
-#import "MLBContent.h"
+#import "MLBAppList.h"
 #import "MLBSettingsSectionHeaderView.h"
 #import "MLBSettingsCell.h"
 
-@interface MLBContentViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface MLBAppListViewController () <UITableViewDataSource, UITableViewDelegate>
 
 
 @property (strong, nonatomic) UITableView *tableView;
 
 @end
 
-@implementation MLBContentViewController {
+@implementation MLBAppListViewController {
     NSArray *dataSource;
     NSString *version;
 }
@@ -34,7 +34,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"联系我们";
+    self.title = @"梦游兔的App列表";
     //[self addNavigationBarRightMusicItem];
     
     UIButton *plantButton = [MLBUIFactory buttonWithImageName:@"close_highlighted" highlightImageName:@"close_normal" target:self action:@selector(DoneClick)];
@@ -51,7 +51,7 @@
 #pragma mark - Private Method
 
 - (void)initDatas {
-    dataSource = @[@[@"联系我们", @[@"新浪微博：@梦游兔App", @"反馈邮箱：hsw625728@163.com", @"梦游兔网站：mengyoutu.cn"]]];
+    dataSource = @[@[@"", @[@"点击跳转->《几何大师》⭐️⭐️⭐️⭐️⭐️", @"点击跳转->《粒子大师》⭐️⭐️⭐️⭐️⭐️", @"点击跳转->《马赛克》⭐️", @"点击跳转->《逃离迷宫》⭐️⭐️", @"点击跳转->《毁灭前夕》⭐️⭐️⭐️⭐️", @"点击跳转->《细菌消消乐》⭐️", @"点击跳转->《时间追踪》⭐️⭐️", @"点击跳转->《黑白对战》⭐️", @"点击跳转->《眼疾手快》⭐️⭐️⭐️", @"点击跳转->《康威生命游戏》⭐️⭐️⭐️⭐️", @"点击跳转->《勇者地下城纸牌》⭐️⭐️⭐️⭐️⭐️"]]];
     
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
 //    NSString *prodName = [infoDictionary objectForKey:@"CFBundleName"];
@@ -112,18 +112,8 @@
     NSArray *rowTitles = dataSource[indexPath.section][1];
     NSString *rowTitle = rowTitles[indexPath.row];
     
-    if (indexPath.section == 0 && indexPath.row == 0) {// 流量播放提醒
-        cell = [tableView dequeueReusableCellWithIdentifier:kSettingsCellIDWithArrow forIndexPath:indexPath];
-        [cell configureCellWithTitle:rowTitle isSwitchOn:[[UserDefaults objectForKey:MLBNetworkFlowRemindKey] isEqualToString:@"YES"]];
-        __weak typeof(self) weakSelf = self;
-        cell.switchChanged = ^(BOOL isOn) {
-            __strong typeof(weakSelf) strongSelf = weakSelf;
-            [strongSelf networkFlowRemindSwitchDidChanged:isOn];
-        };
-    }else {
-        cell = [tableView dequeueReusableCellWithIdentifier:kSettingsCellIDWithArrow forIndexPath:indexPath];
-        [cell configureCellWithTitle:rowTitle];
-    }
+    cell = [tableView dequeueReusableCellWithIdentifier:kSettingsCellIDWithArrow forIndexPath:indexPath];
+    [cell configureCellWithTitle:rowTitle];
     
     return cell;
 }
@@ -147,6 +137,41 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    UINavigationController *nav = nil;
+    if (indexPath.section == 0 && indexPath.row == 0)
+    {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://itunes.apple.com/cn/app/id1219121149?mt=8"]];
+    }
+    else if(indexPath.section == 0 && indexPath.row == 1){
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://itunes.apple.com/cn/app/id1219195472?mt=8"]];
+    }
+    else if(indexPath.section == 0 && indexPath.row == 2){
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://itunes.apple.com/cn/app/id1211586921?mt=8"]];
+    }
+    else if(indexPath.section == 0 && indexPath.row == 3){
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://itunes.apple.com/cn/app/id1210332688?mt=8"]];
+    }
+    else if(indexPath.section == 0 && indexPath.row == 4){
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://itunes.apple.com/cn/app/id1214199356?mt=8"]];
+    }
+    else if(indexPath.section == 0 && indexPath.row == 5){
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://itunes.apple.com/cn/app/id1212221765?mt=8"]];
+    }
+    else if(indexPath.section == 0 && indexPath.row == 6){
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://itunes.apple.com/cn/app/id1206851661?mt=8"]];
+    }
+    else if(indexPath.section == 0 && indexPath.row == 7){
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://itunes.apple.com/cn/app/id1208071503?mt=8"]];
+    }
+    else if(indexPath.section == 0 && indexPath.row == 8){
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://itunes.apple.com/cn/app/id1193134981?mt=8"]];
+    }
+    else if(indexPath.section == 0 && indexPath.row == 9){
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://itunes.apple.com/cn/app/id1203120986?mt=8"]];
+    }
+    else if(indexPath.section == 0 && indexPath.row == 10){
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://itunes.apple.com/cn/app/id1205252865?mt=8"]];
+    }
 }
 
 - (void)DoneClick

@@ -11,7 +11,7 @@
 typedef NS_ENUM(NSUInteger, MLBPopMenuType) {
     MLBPopMenuTypeWechatFrined,// 微信好友
     MLBPopMenuTypeMoments,// 朋友圈
-    MLBPopMenuTypeWeibo,// 微博
+    //MLBPopMenuTypeWeibo,// 微博
     MLBPopMenuTypeQQ,// QQ
     MLBPopMenuTypeMail,// 邮件
     MLBPopMenuTypeSMS,// 短信（iMessage）

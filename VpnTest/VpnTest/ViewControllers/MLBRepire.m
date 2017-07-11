@@ -6,18 +6,18 @@
 //  Copyright © 2016 meilbn. All rights reserved.
 //
 
-#import "MLBContent.h"
+#import "MLBRepire.h"
 #import "MLBSettingsSectionHeaderView.h"
 #import "MLBSettingsCell.h"
 
-@interface MLBContentViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface MLBRepireViewController () <UITableViewDataSource, UITableViewDelegate>
 
 
 @property (strong, nonatomic) UITableView *tableView;
 
 @end
 
-@implementation MLBContentViewController {
+@implementation MLBRepireViewController {
     NSArray *dataSource;
     NSString *version;
 }
@@ -34,7 +34,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"联系我们";
+    self.title = @"故障修复";
     //[self addNavigationBarRightMusicItem];
     
     UIButton *plantButton = [MLBUIFactory buttonWithImageName:@"close_highlighted" highlightImageName:@"close_normal" target:self action:@selector(DoneClick)];
@@ -51,7 +51,7 @@
 #pragma mark - Private Method
 
 - (void)initDatas {
-    dataSource = @[@[@"联系我们", @[@"新浪微博：@梦游兔App", @"反馈邮箱：hsw625728@163.com", @"梦游兔网站：mengyoutu.cn"]]];
+    dataSource = @[@[@"故障排除步骤", @[@"1.下载安装时会弹出对话框", @"    需要点击Allow选项", @"    如果没有点击请删除重新安装", @"    安装时请选择Allow选项", @"2.打开系统设置->VPN", @"    确保“梦游兔”被选中", @"3.如果在WiFi环境下失败", @"    请关闭WiFi尝试4G环境下连接", @"4.如果还没解决", @"    请给新浪微博“@梦游兔App”留言"]]];
     
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
 //    NSString *prodName = [infoDictionary objectForKey:@"CFBundleName"];
@@ -112,18 +112,8 @@
     NSArray *rowTitles = dataSource[indexPath.section][1];
     NSString *rowTitle = rowTitles[indexPath.row];
     
-    if (indexPath.section == 0 && indexPath.row == 0) {// 流量播放提醒
-        cell = [tableView dequeueReusableCellWithIdentifier:kSettingsCellIDWithArrow forIndexPath:indexPath];
-        [cell configureCellWithTitle:rowTitle isSwitchOn:[[UserDefaults objectForKey:MLBNetworkFlowRemindKey] isEqualToString:@"YES"]];
-        __weak typeof(self) weakSelf = self;
-        cell.switchChanged = ^(BOOL isOn) {
-            __strong typeof(weakSelf) strongSelf = weakSelf;
-            [strongSelf networkFlowRemindSwitchDidChanged:isOn];
-        };
-    }else {
-        cell = [tableView dequeueReusableCellWithIdentifier:kSettingsCellIDWithArrow forIndexPath:indexPath];
-        [cell configureCellWithTitle:rowTitle];
-    }
+    cell = [tableView dequeueReusableCellWithIdentifier:kSettingsCellIDWithArrow forIndexPath:indexPath];
+    [cell configureCellWithTitle:rowTitle];
     
     return cell;
 }

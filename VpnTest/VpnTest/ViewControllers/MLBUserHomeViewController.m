@@ -15,6 +15,8 @@
 #import "MLBSettingsViewController.h"
 #import "MLBContent.h"
 #import "MLBHelp.h"
+#import "MLBRepire.h"
+#import "MLBAppList.h"
 #import "MLBFriend.h"
 #import "MLBIAP.h"
 //分享功能
@@ -72,9 +74,9 @@
 #pragma mark - Private Method
 
 - (void)initDatas {
-    sectionTitles = @[@"帮助说明", @"关于梦游兔"];
-    rowTitles = @[@[@"帮助说明"], @[@"联系我们", @"分享给朋友"]];
-    rowImageNames = @[@[@"center_setting"/*, @"tab_read_normal"*/], @[@"center_setting", /*@"tab_home_normal", */@"nav_me_normal"]];
+    sectionTitles = @[@"帮助说明", @"支持梦游兔", @"关于梦游兔"];
+    rowTitles = @[@[@"帮助说明",@"故障排除"], @[@"App列表"], @[@"联系梦游兔", @"分享给朋友"]];
+    rowImageNames = @[@[@"center_setting", @"tab_read_normal"], @[@"tab_home_normal"], @[@"center_setting", /*@"tab_home_normal", */@"nav_me_normal"]];
 }
 
 - (void)setupViews {
@@ -181,6 +183,10 @@
     return 10;
 }
 
+
+//sectionTitles = @[@"帮助说明", @"支持梦游兔", @"关于梦游兔"];
+//rowTitles = @[@[@"帮助说明",@"故障排除"], @[@"App列表"], @[@"联系梦游兔", @"分享给朋友"]];
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     UINavigationController *nav = nil;
@@ -189,37 +195,26 @@
         nav = [[UINavigationController alloc] initWithRootViewController:[[MLBHelpViewController alloc] init]];
         [nav setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
         [self presentViewController:nav animated:YES completion:NULL];
-        /*
-        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
-        NSString *imgFilePath = [paths[0] stringByAppendingPathComponent:@"upload.jpg"];
-        
-        //这里好像应该写渲染后的图片
-        //NSData *imgData = UIImageJPEGRepresentation(_paintView.image, 0.9);
-        NSData *imgData = UIImageJPEGRepresentation(_paintView.renderedImage, 0.9);
-        
-        [imgData writeToFile:imgFilePath atomically:YES];
-        
-        static __strong UIDocumentInteractionController *documentInteractionController = nil;
-        documentInteractionController = [UIDocumentInteractionController interactionControllerWithURL:[NSURL fileURLWithPath:imgFilePath]];
-        //documentInteractionController.annotation = [NSDictionary dictionaryWithObject:@"Created with the Impression iOS app!" forKey:@"InstagramCaption"];
-        BOOL response = [documentInteractionController presentOpenInMenuFromRect:CGRectZero inView:self.view animated:YES];
-        
-        if (!response) [self showModalMessage:@"没有安装其他支持的应用。"];
-        */
     }
     else if (indexPath.section == 0 && indexPath.row == 1)
     {
-        nav = [[UINavigationController alloc] initWithRootViewController:[[MLBIAPViewController alloc] init]];
+        nav = [[UINavigationController alloc] initWithRootViewController:[[MLBRepireViewController alloc] init]];
         [nav setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
         [self presentViewController:nav animated:YES completion:NULL];
     }
     else if (indexPath.section == 1 && indexPath.row == 0)
     {
+        nav = [[UINavigationController alloc] initWithRootViewController:[[MLBAppListViewController alloc] init]];
+        [nav setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+        [self presentViewController:nav animated:YES completion:NULL];
+    }
+    else if (indexPath.section == 2 && indexPath.row == 0)
+    {
         nav = [[UINavigationController alloc] initWithRootViewController:[[MLBContentViewController alloc] init]];
         [nav setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
         [self presentViewController:nav animated:YES completion:NULL];
     }
-    else if (indexPath.section == 1 && indexPath.row == 1)
+    else if (indexPath.section == 2 && indexPath.row == 1)
     {
         //nav = [[UINavigationController alloc] initWithRootViewController:[[MLBContentViewController alloc] init]];
         //分享给朋友
@@ -313,10 +308,10 @@
                 break;
             case MLBPopMenuTypeMoments:
                 [self shareToWeixinTimeline];
-                break;
+                break;/*
             case MLBPopMenuTypeWeibo:
                 [self shareToWeibo];
-                break;
+                break;*/
             case MLBPopMenuTypeQQ:
                 [self shareToQQ];
                 break;

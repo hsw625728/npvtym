@@ -69,10 +69,10 @@
          {
              case SSDKPlatformTypeSinaWeibo:
                  //设置新浪微博应用信息,其中authType设置为使用SSO＋Web形式授权
-                 [appInfo SSDKSetupSinaWeiboByAppKey:@"wb1103580890"
+                 [appInfo SSDKSetupSinaWeiboByAppKey:@"1103580890"
                                            appSecret:@"c771b8ff56786331f1225735005ee559"
                                          redirectUri:@"http://mengyoutu.cn"
-                                            authType:SSDKAuthTypeSSO];
+                                            authType:SSDKAuthTypeBoth];
                  break;
              case SSDKPlatformTypeWechat:
                  [appInfo SSDKSetupWeChatByAppId:@"wxada2383d7254df47"
